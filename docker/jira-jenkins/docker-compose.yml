@@ -1,0 +1,22 @@
+# To execute this docker-compose yml file use docker-compose -f <file_name> up
+# Add the "-d" flag at the end for deattached execution
+version: "3"   
+services:
+    jira-dev:
+        image: cptactionhank/atlassian-jira
+        ports:
+            - 8085:8080
+        networks:
+            - localhost          
+            
+    jenkins-maven:
+        image: eggsy84/jenkins-maven-git-docker
+        ports:
+            - 8088:8080           
+        links:
+            - jira-dev:/var/atlassian/jira           
+        networks:
+            - localhost          
+            
+networks:
+    localhost:        

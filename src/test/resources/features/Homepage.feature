@@ -1,0 +1,26 @@
+Feature: Verify Homepage links and search feature
+
+@navigation_links
+Scenario Outline: User navigates to HomePage and verifies links
+
+	Given I'm on costa web page
+	When I hover on tab <tab>
+	Then I get popup with further options
+	
+	Examples:
+		|tab|
+		|Locations|
+		|Coffee Club|
+		|Responsibility|
+
+@search
+Scenario Outline: User enters location in SearchBox and clicks go button
+
+	Given I hover on tab <tab>
+	When I enter text in search box <search_text>
+	And I click go button
+	Then search results are displayed
+
+	Examples:
+		|tab|search_text|
+		|Locations|holborn|
