@@ -79,7 +79,7 @@ public class BaseSetup {
 	}
 
 	@Attachment
-	public byte[] screenCapture(String name) {
+	public byte[] screenCapture() {
 		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 	}
 
