@@ -15,7 +15,7 @@ public class BaseSetup {
 
     protected WebDriver driver;
     protected WebElement element;
-    protected int timeout =15;
+    protected int timeout =5;
 
     public BaseSetup(WebDriver driver) {
         this.driver = driver;

@@ -1,26 +1,14 @@
 package tests;
 
-import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.HomePage;
 import pages.StoreLocatorPage;
-import support.BrowserSetup;
 
 /**
  * Created by spasham@planittesting.com
  */
 
-public class HomePageTest extends BrowserSetup {
-
-    public HomePageTest() {
-        openBrowser("https://www.costa.co.uk/");
-        new HomePage(driver).verifyHomePageLinks();
-    }
-
-    @AfterClass
-    public void quit() throws Exception {
-        new HomePage(driver).quit();
-    }
+public class HomePageTest extends BaseTest {
 
     private void verifyTab(String tab) {
         new HomePage(driver).hoverOnTab(tab);
@@ -31,11 +19,11 @@ public class HomePageTest extends BrowserSetup {
     public void tab_coffeeClub() throws Exception {
         verifyTab("Coffee Club");
     }
-	
+
     @Test(priority=2)
     public void test_should_fail() throws Exception {
-        verifyTab("Tab Does Not Exist");
-    }	
+        verifyTab("Tab Does not Exist");
+    }
 
     @Test (priority=3)
     public void searchLocation() throws Exception {
@@ -45,11 +33,4 @@ public class HomePageTest extends BrowserSetup {
         new StoreLocatorPage(driver).verifyStoreLocatorPage();
     }
 
-    @AfterMethod
-    public void testSetup(ITestResult result) throws Exception {
-        if (result.getStatus() == ITestResult.FAILURE) {
-            System.out.println(System.lineSeparator()+result.getName()+" -- FAILED!");
-            new HomePage(driver).screenCapture();
-        }
-    }
 }
