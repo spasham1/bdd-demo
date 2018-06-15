@@ -29,7 +29,7 @@ public class HomePageTest extends BrowserSetup {
 
     @Test(priority=1)
     public void tab_coffeeClub() throws Exception {
-        verifyTab("Coffee Club");
+        verifyTab("Coffee Clubxx");
     }
 
     @Test (priority=2)
