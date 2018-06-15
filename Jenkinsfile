@@ -3,7 +3,7 @@ pipeline {
 	
     environment {
         BROWSER = 'firefox'
-        NODE = 'local'
+        NODE = 'localhost'
 		PLATFORM = 'windows'
     }
     
