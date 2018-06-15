@@ -9,7 +9,7 @@ import support.BrowserSetup;
 import ru.yandex.qatools.allure.annotations.Step;
 
 /**
- * Created by SPasham on 27/04/2018.
+ * Created by spasham@planittesting.com
  */
 
 public class HomePageSteps extends BrowserSetup {

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import support.BaseSetup;
 
 /**
- * Created by SPasham on 27/04/2018.
+ * Created by spasham@planittesting.com
  */
 
 public class StoreLocatorPage extends BaseSetup {
@@ -21,6 +21,7 @@ public class StoreLocatorPage extends BaseSetup {
     }
 
     public StoreLocatorPage verifyStoreLocatorPage() {
+        pageShouldContainTitle("Store Locator - Find a Coffee Shop Near You | Costa Coffee ");
         By elements[] = {storeLocator, mapContainer, miniMapDetails, headerText, locDetailsPane};
         for (By element: elements) {
             waitForVisibilityOf(element);

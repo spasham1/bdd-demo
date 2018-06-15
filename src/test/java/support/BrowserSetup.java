@@ -15,7 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Created by SPasham on 22/01/2018.
+ * Created by spasham@planittesting.com
  */
 
 public class BrowserSetup {

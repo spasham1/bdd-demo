@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.allure.annotations.*;
 
 /**
- * Created by SPasham on 22/01/2018.
+ * Created by spasham@planittesting.com
  */
 
 public class BaseSetup {

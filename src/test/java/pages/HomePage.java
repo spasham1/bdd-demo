@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import support.*;
 
 /**
- * Created by SPasham on 27/04/2018.
+ * Created by spasham@planittesting.com
  */
 
 public class HomePage extends BaseSetup {

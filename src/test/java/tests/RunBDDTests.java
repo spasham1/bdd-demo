@@ -5,13 +5,13 @@ import cucumber.api.junit.Cucumber;
 import cucumber.api.CucumberOptions;
 
 /**
- * Created by SPasham on 22/01/2018.
+ * Created by spasham@planittesting.com
  */
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/resources/features/",
-        glue = {"steps"},
+		glue = {"steps"},
 		plugin = { "html:target/reports/cucumber-html-report",
 				   "json:target/reports/cucumber.json",
 				   "junit:target/reports/cucumber-results.xml",

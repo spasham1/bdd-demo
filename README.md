@@ -6,9 +6,9 @@ The Test Automation Framework is created using Selenium WebDriver using Java bin
 
 Pre-requisites:
 ---------------
-Java jdk-1.8 or higher (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-Apache Maven 3 or higher (https://maven.apache.org/)
-Selenium (https://www.seleniumhq.org/download/)
+- Java jdk-1.8 or higher (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- Apache Maven 3 or higher (https://maven.apache.org/)
+- Selenium (https://www.seleniumhq.org/download/)
 
 Steps to Use:
 -------------
@@ -18,8 +18,8 @@ Steps to Use:
 2. Execution: 
     - Maven: mvn clean test (command line or using lifecycle goals from IDE)
 	- TestNG: use testng.xml to run the tests
-	- BDD: use RunTests class to run BDD feature files
-	- Jenkins: use Jenkinsfile as part of Jenkins pipeline job
+	- BDD: use RunBDDTests class from tests package to run BDD feature files
+	- Jenkins CI: use Jenkinsfile as part of pipeline job
 3. Optional Configuration/Parameters: 
     - Local Variables: BROWSER, NODE, PLATFORM
     - Global System Variables: -Dbrowser -Dnode -Dplatform (for command-line/jvm runtime/jenkins options)

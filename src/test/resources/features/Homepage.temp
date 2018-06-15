@@ -9,9 +9,7 @@ Scenario Outline: User navigates to HomePage and verifies links
 	
 	Examples:
 		|tab|
-		|Locations|
 		|Coffee Club|
-		|Responsibility|
 
 @search
 Scenario Outline: User enters location in SearchBox and clicks go button
