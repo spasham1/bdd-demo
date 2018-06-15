@@ -78,8 +78,8 @@ public class BaseSetup {
 		waitForVisibilityOf(By.xpath("//*[contains(., '" + text + "')]"));
 	}
 
-	@Attachment
-	public byte[] screenCapture() {
+	@Attachment(value = "Failure in method {0}", type = "image/png")
+	public byte[] screenCapture(String name) {
 		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 	}
 
