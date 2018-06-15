@@ -2,14 +2,14 @@ pipeline {
     agent any
 	
     environment {
-        BROWSER = 'firefox'
-        NODE = 'localhost'
+        BROWSER = 'chrome'
+        NODE = 'local'
     }
     
     stages {
         stage('Test') {
             steps {
-				bat 'mvn -Dmaven.test.failure.ignore clean test'			
+				bat 'mvn -Dmaven.test.failure.ignore clean test -Dbrowser=%BROWSER% -Dnode=%NODE%'			
             }
         }
         stage('Results') {
