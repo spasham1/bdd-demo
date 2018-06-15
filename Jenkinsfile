@@ -14,11 +14,7 @@ pipeline {
         }
         stage('Build Test') {
             steps {
-				  if (isUnix()) {
-					 sh "mvn -Dmaven.test.failure.ignore clean package"
-				  } else {
-					 bat 'mvn -Dmaven.test.failure.ignore clean test -Dbrowser=$BROWSER -Dnode=$NODE -Dplatform=$PLATFORM'
-				  }				
+				bat 'mvn -Dmaven.test.failure.ignore clean test -Dbrowser=$BROWSER -Dnode=$NODE -Dplatform=$PLATFORM'			
             }
         }
         stage('Results') {
