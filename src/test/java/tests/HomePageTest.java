@@ -10,24 +10,28 @@ import pages.StoreLocatorPage;
 
 public class HomePageTest extends BaseTest {
 
-    private void verifyTab(String tab) {
-        new HomePage(driver).hoverOnTab(tab);
-        new HomePage(driver).waitForPopup();
+    @DataProvider(name = "tabs")
+    public static Object[][] tabs() {
+        return new Object[][] {
+                { "Coffee Club" },
+                { "Responsibility" },
+                { "About Us" }
+        };
     }
 
-    @Test(priority=1)
-    public void tab_coffeeClub() throws Exception {
-        verifyTab("Coffee Club");
+    @Test(priority=1, dataProvider = "tabs")
+    public void navigation_tabs(String tab) throws Exception {
+        new HomePage(driver).assertTab(tab);
     }
 
     @Test(priority=2)
     public void test_should_fail() throws Exception {
-        verifyTab("Tab Does not Exist");
+        new HomePage(driver).assertTab("Tab Does not Exist");
     }
 
     @Test (priority=3)
     public void searchLocation() throws Exception {
-        verifyTab("Locations");
+        new HomePage(driver).assertTab("Locations");
         new HomePage(driver).enterTextInSearchBox("holborn");
         new HomePage(driver).clickGo();
         new StoreLocatorPage(driver).verifyStoreLocatorPage();

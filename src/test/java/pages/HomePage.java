@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 import support.*;
 
 /**
@@ -19,6 +20,7 @@ public class HomePage extends BaseSetup {
         super(driver);
     }
 
+    @Step
     public HomePage verifyHomePageLinks() {
         acceptCookie();
     	String[] tabs = {"Our Coffees", "Locations", "Coffee Club", "Responsibility", "About Us"};
@@ -28,36 +30,49 @@ public class HomePage extends BaseSetup {
     	return new HomePage(driver);
     }
 
+    @Step
     public HomePage homePageLoaded() {
         pageShouldContainTitle("The Nation's Favourite Coffee Shop | Costa Coffee");
         return new HomePage(driver);
     }
 
+    @Step
     public HomePage enterTextInSearchBox(String text) throws Exception {
         waitForVisibilityOf(searchAddress);
     	input(searchAddress, text);
         return new HomePage(driver);
     }
 
+    @Step
     public HomePage acceptCookie() {
         if(isElementPresent(IAgree)==true)
             click(IAgree);
         return new HomePage(driver);
     }
 
+    @Step
     public HomePage hoverOnTab(String tab) {
         hover(By.xpath("//a[text()='"+tab+"']"));
         waitForVisibilityOf(wrapper);
         return new HomePage(driver);
     }
 
+    @Step
     public HomePage waitForPopup() {
         waitForVisibilityOf(wrapper);
         return new HomePage(driver);
     }
 
+    @Step
     public HomePage clickGo() {
         click(goButton);
+        return new HomePage(driver);
+    }
+
+    @Step
+    public HomePage assertTab(String tab) {
+        hoverOnTab(tab);
+        waitForPopup();
         return new HomePage(driver);
     }
 

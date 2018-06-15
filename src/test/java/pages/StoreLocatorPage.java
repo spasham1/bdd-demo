@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 import support.BaseSetup;
 
 /**
@@ -20,6 +21,7 @@ public class StoreLocatorPage extends BaseSetup {
         super(driver);
     }
 
+    @Step
     public StoreLocatorPage verifyStoreLocatorPage() {
         pageShouldContainTitle("Store Locator - Find a Coffee Shop Near You");
 
