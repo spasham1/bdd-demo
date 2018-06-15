@@ -24,10 +24,9 @@ public class BaseTest extends BrowserSetup implements IHookable {
     @Override
     public void run(IHookCallBack callBack, ITestResult testResult) {
         callBack.runTestMethod(testResult);
-        String testName = testResult.getName();
         if (testResult.getThrowable() != null) {
-            new HomePage(driver).screenCapture(testName);
-            System.out.println(System.lineSeparator()+"TEST ("+testName+") -- FAILED!");
+            new HomePage(driver).screenCapture(testResult.getMethod().getMethodName());
+            System.out.println(System.lineSeparator()+"TEST ("+testResult.getName()+") -- FAILED!");
         }
     }
 }
