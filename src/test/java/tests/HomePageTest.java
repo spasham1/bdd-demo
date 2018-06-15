@@ -29,10 +29,15 @@ public class HomePageTest extends BrowserSetup {
 
     @Test(priority=1)
     public void tab_coffeeClub() throws Exception {
-        verifyTab("Coffee Clubxx");
+        verifyTab("Coffee Club");
     }
+	
+    @Test(priority=2)
+    public void test_should_fail() throws Exception {
+        verifyTab("Tab Does Not Exist");
+    }	
 
-    @Test (priority=2)
+    @Test (priority=3)
     public void searchLocation() throws Exception {
         verifyTab("Locations");
         new HomePage(driver).enterTextInSearchBox("holborn");
