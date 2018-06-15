@@ -1,11 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Regression">
-
    <test name="HomePage">
       <classes>
          <class name="tests.HomePageTest" />
       </classes>
    </test>
-
 </suite>
