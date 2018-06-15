@@ -7,12 +7,7 @@ pipeline {
 		PLATFORM = 'windows'
     }
     stages {
-        stage('Code Checkout') {
-            steps {
-                git 'https://github.com/spasham1/bdd-demo.git'
-            }
-        }
-        stage('Build Test') {
+        stage('Test') {
             steps {
 				bat 'mvn -Dmaven.test.failure.ignore clean test -Dbrowser=%BROWSER% -Dnode=%NODE% -Dplatform=%PLATFORM%'			
             }
