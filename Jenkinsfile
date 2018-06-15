@@ -9,12 +9,16 @@ pipeline {
     stages {
         stage('Code Checkout') {
             steps {
-                git 'https://git.planittesting.com/spasham/jira-selenium-docker.git'
+                git 'https://github.com/spasham1/bdd-demo.git'
             }
         }
         stage('Build Test') {
             steps {
-                mvn clean test -Dbrowser=$BROWSER -Dnode=$NODE -Dplatform=$PLATFORM
+				  if (isUnix()) {
+					 sh "mvn -Dmaven.test.failure.ignore clean package"
+				  } else {
+					 bat 'mvn -Dmaven.test.failure.ignore clean test -Dbrowser=$BROWSER -Dnode=$NODE -Dplatform=$PLATFORM'
+				  }				
             }
         }
         stage('Results') {
