@@ -28,7 +28,7 @@ public class BrowserSetup {
 	protected String PLATFORM = "ANY";
 
     public void openBrowser(String url) {
-    	String drivers= "./src/test/resources/drivers/";
+    	String drivers= System.getProperty("user.dir")+"/src/test/resources/drivers/";
 
         /*
          * System environment variable config params

@@ -79,7 +79,7 @@ public class BaseSetup {
 	@Step
     public void pageShouldContainTitle(String title) {
     	if(!driver.getTitle().contains(title))
-    		Assert.fail("Page does not contain title " +title);
+    		Assert.fail("Page does not contain title: " +title);
     }
 
 	@Step

@@ -21,7 +21,8 @@ public class StoreLocatorPage extends BaseSetup {
     }
 
     public StoreLocatorPage verifyStoreLocatorPage() {
-        pageShouldContainTitle("Store Locator - Find a Coffee Shop Near You | Costa Coffee ");
+        pageShouldContainTitle("Store Locator - Find a Coffee Shop Near You");
+
         By elements[] = {storeLocator, mapContainer, miniMapDetails, headerText, locDetailsPane};
         for (By element: elements) {
             waitForVisibilityOf(element);
