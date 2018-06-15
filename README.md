@@ -16,9 +16,10 @@ Steps to Use:
     - Clone the repository (git clone git@git.planittesting.com:spasham/jira-selenium-docker.git) OR
     - Download zip and extract to a local directory
 2. Execution: 
-    - MAVEN: mvn clean test (command line or using lifecycle goals from IDE)
-	- TESTNG: use testng.xml to run the tests
+    - Maven: mvn clean test (command line or using lifecycle goals from IDE)
+	- TestNG: use testng.xml to run the tests
 	- BDD: use RunTests class to run BDD feature files
+	- Jenkins: use Jenkinsfile as part of Jenkins pipeline job
 3. Optional Configuration/Parameters: 
     - Local Variables: BROWSER, NODE, PLATFORM
     - Global System Variables: -Dbrowser -Dnode -Dplatform (for command-line/jvm runtime/jenkins options)
