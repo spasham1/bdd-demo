@@ -21,7 +21,7 @@ public class BaseSetup {
         this.driver = driver;
     }
 
-	public void quit() throws Exception {
+	public void quit() {
 		if(driver!=null)
 			driver.quit();
 	}
@@ -63,7 +63,7 @@ public class BaseSetup {
     	element.click();
     }
 
-    public void input(By locator, String text) throws Exception {
+    public void input(By locator, String text) {
     	click(locator);
     	element.clear();
     	element.sendKeys(text);

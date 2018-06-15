@@ -20,17 +20,17 @@ public class HomePageTest extends BaseTest {
     }
 
     @Test(priority=1, dataProvider = "tabs")
-    public void navigation_tabs(String tab) throws Exception {
+    public void navigation_tabs(String tab) {
         new HomePage(driver).assertTab(tab);
     }
 
     @Test(priority=2)
-    public void test_should_fail() throws Exception {
+    public void test_should_fail() {
         new HomePage(driver).assertTab("Tab Does not Exist");
     }
 
     @Test (priority=3)
-    public void searchLocation() throws Exception {
+    public void searchLocation() {
         new HomePage(driver).assertTab("Locations");
         new HomePage(driver).enterTextInSearchBox("holborn");
         new HomePage(driver).clickGo();

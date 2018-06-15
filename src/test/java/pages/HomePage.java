@@ -37,7 +37,7 @@ public class HomePage extends BaseSetup {
     }
 
     @Step
-    public HomePage enterTextInSearchBox(String text) throws Exception {
+    public HomePage enterTextInSearchBox(String text) {
         waitForVisibilityOf(searchAddress);
     	input(searchAddress, text);
         return new HomePage(driver);
