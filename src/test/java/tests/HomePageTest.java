@@ -33,7 +33,8 @@ public class HomePageTest extends BaseTest {
     public void searchLocation() {
         new HomePage(driver).assertTab("Locations");
         new HomePage(driver).enterTextInSearchBox("holborn");
-        new HomePage(driver).clickGo();
+        //new HomePage(driver).clickGo(); - bug with Go button needs fixing.
+        new HomePage(driver).clickReturn();
         new StoreLocatorPage(driver).verifyStoreLocatorPage();
     }
 

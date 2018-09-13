@@ -70,13 +70,27 @@ public class BaseSetup {
     }
 
     public void pageShouldContainTitle(String title) {
-    	if(!driver.getTitle().contains(title))
-    		Assert.fail("Page does not contain title: " +title);
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, timeout);
+            wait.until(ExpectedConditions.titleContains(title));
+        } catch (Exception e) {
+            Assert.fail("Page does not contain title: " +title);
+        }
+    }
+
+    public void validatePageTitle(String title) {
+        String pageTitle=driver.getTitle();
+        if(!pageTitle.equals(title))
+            Assert.assertEquals(pageTitle, title);
     }
 
     public void pageShouldContainText(String text) {
 		waitForVisibilityOf(By.xpath("//*[contains(., '" + text + "')]"));
 	}
+
+    public void clickReturn() {
+        new Actions(driver).sendKeys(Keys.RETURN).perform();
+    }
 
 	@Attachment(value = "Failure in method {0}", type = "image/png")
 	public byte[] screenCapture(String name) {

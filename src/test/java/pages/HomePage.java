@@ -12,7 +12,7 @@ import support.*;
 public class HomePage extends BaseSetup {
 
     By searchAddress = By.id("txtHeaderSearchAddress");
-    By IAgree = By.className("cc-compliance");
+    By IAgree = By.xpath("//*[@aria-label='allow cookies']");
     By goButton = By.id("btn-go");
     By wrapper = By.xpath("//*[contains(@class, 'meganav mn') and contains(@style, 'display: block;')]");
 
