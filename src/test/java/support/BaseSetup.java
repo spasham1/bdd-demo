@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.allure.annotations.Attachment;
 
+import java.util.ArrayList;
+
 /**
  * Created by spasham@planittesting.com
  */
@@ -63,6 +65,17 @@ public class BaseSetup {
     	element.click();
     }
 
+	public void clickText(String text) {
+    	By locator=null;
+		if(text.endsWith("}")){
+			String[] splitText=text.split("[{}]");
+			locator=By.xpath("(//*[text()[contains(., '"+splitText[0].substring("@".length())+"')]])["+splitText[1]+"]");
+		} else {
+			locator=By.xpath("//*[text()='"+text+"']");
+		}
+		click(locator);
+	}
+
     public void input(By locator, String text) {
     	click(locator);
     	element.clear();
@@ -78,18 +91,13 @@ public class BaseSetup {
         }
     }
 
-    public void validatePageTitle(String title) {
-        String pageTitle=driver.getTitle();
-        if(!pageTitle.equals(title))
-            Assert.assertEquals(pageTitle, title);
-    }
-
-    public void pageShouldContainText(String text) {
-		waitForVisibilityOf(By.xpath("//*[contains(., '" + text + "')]"));
-	}
-
     public void clickReturn() {
         new Actions(driver).sendKeys(Keys.RETURN).perform();
+    }
+
+    public void switchToNewTab() {
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(tabs.size()-1)).manage().window().maximize();
     }
 
 	@Attachment(value = "Failure in method {0}", type = "image/png")
