@@ -30,7 +30,7 @@ public class PPTest extends PPBaseTest {
     }
 
     @Test(priority = 4)
-    public void service_provider_page_tabs_should_fail() {
+    public void consumer_page_tabs_should_fail() {
         new PPCorporatePage(driver).selectSite("Consumer");
         new PPCorporatePage(driver).pageShouldContainTitle("Market-leading omnichannel payments and services for your customers | PayPoint");
         new PPCorporatePage(driver).assertOtherTabs();

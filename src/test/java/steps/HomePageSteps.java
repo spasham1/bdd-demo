@@ -12,7 +12,8 @@ import support.BrowserSetup;
 
 public class HomePageSteps extends BrowserSetup {
 
-    public HomePageSteps() {
+    /* commented for PP Tests
+	public HomePageSteps() {
         openBrowser("https://www.costa.co.uk/");
         new HomePage(driver).verifyHomePageLinks();
     }
@@ -20,7 +21,7 @@ public class HomePageSteps extends BrowserSetup {
     @After
     public void quit() {
         new HomePage(driver).quit();
-    }
+    }*/
 
     @Given("^I'm on costa web page$")
     public void HomePageLoaded() {

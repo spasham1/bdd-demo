@@ -1,0 +1,37 @@
+Feature: Verify Paypoint page links and search postcode
+
+@navigation_links
+Scenario Outline: User navigates to Corporate Homepage and verifies links
+
+	Given I'm on paypoint corporate page
+	When I hover on navigation link <navigation_link>
+	Then I get sub navigation options
+	
+	Examples:
+		|navigation_link|
+		|Our proposition|
+		|Our company|
+		|Investor centre|
+
+@OtherPages
+Scenario Outline: Navigate other page links
+
+	Given I click on site selector <site>
+	When I get to page with title<title> and navigate the menu
+	Then I get options with sub navigation links
+
+	Examples:
+		|site|title|
+		|Retailer|Everything you need to run your store |
+		|Service provider|Market-leading omnichannel payments and services for your customers|
+
+@Search
+Scenario Outline: Search postcode on Consumer page
+
+    Given I click on site selector <site>
+	When I get to page with title<title> and navigate the menu
+    And I enter postcode <postcode>
+    Then I get results with PostCode locations
+	Examples:
+    	|site|title| postcode |
+    	|Consumer|Find your local PayPoint store | AL7 1EL |
