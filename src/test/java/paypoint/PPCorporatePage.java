@@ -37,7 +37,8 @@ public class PPCorporatePage extends BaseSetup {
 
     @Step
     public PPCorporatePage acceptCookie() {
-        clickText("Accept");
+        if(isElementPresent(By.xpath("//*[text()='Accept']")))
+            clickText("Accept");
         return new PPCorporatePage(driver);
     }
 
@@ -84,8 +85,8 @@ public class PPCorporatePage extends BaseSetup {
         click(By.xpath("//a[contains(., '"+site+"')]"));
         if(site.equalsIgnoreCase("Retailer")){
             switchToNewTab();
-            acceptCookie();
         }
+        acceptCookie();
     }
 
     @Step
