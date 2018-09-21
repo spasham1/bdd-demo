@@ -42,7 +42,6 @@ public class PPSteps extends BrowserSetup {
     @Given("^I click on site selector (.+)$")
     public void selectSite(String text) {
         new PPCorporatePage(driver).selectSiteLink(text);
-        new PPCorporatePage(driver).switchToNewTab();
     }
 
     @When("^I get to page with title(.+) and navigate the menu$")

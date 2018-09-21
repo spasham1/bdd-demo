@@ -65,17 +65,6 @@ public class BaseSetup {
     	element.click();
     }
 
-	public void clickText(String text) {
-    	By locator=null;
-		if(text.endsWith("}")){
-			String[] splitText=text.split("[{}]");
-			locator=By.xpath("(//*[text()[contains(., '"+splitText[0].substring("@".length())+"')]])["+splitText[1]+"]");
-		} else {
-			locator=By.xpath("//*[text()='"+text+"']");
-		}
-		click(locator);
-	}
-
     public void input(By locator, String text) {
     	click(locator);
     	element.clear();

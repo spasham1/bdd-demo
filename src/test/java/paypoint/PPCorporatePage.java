@@ -13,7 +13,7 @@ import support.BaseSetup;
 public class PPCorporatePage extends BaseSetup {
 
     By subNavigation=By.xpath("//*[contains(@class, 'SubNavigation') and contains(@style, 'display: block;')]");
-
+    By Accept = By.xpath("//*[text()='Accept']");
     public PPCorporatePage(WebDriver driver) {
         super(driver);
     }
@@ -37,8 +37,8 @@ public class PPCorporatePage extends BaseSetup {
 
     @Step
     public PPCorporatePage acceptCookie() {
-        if(isElementPresent(By.xpath("//*[text()='Accept']")))
-            clickText("Accept");
+        if(isElementPresent(Accept)==true)
+            click(Accept);
         return new PPCorporatePage(driver);
     }
 
@@ -85,13 +85,15 @@ public class PPCorporatePage extends BaseSetup {
         click(By.xpath("//a[contains(., '"+site+"')]"));
         if(site.equalsIgnoreCase("Retailer")){
             switchToNewTab();
+            acceptCookie();
         }
-        acceptCookie();
     }
 
     @Step
     public void selectSiteLink(String site) {
         click(By.xpath("//a[contains(., '"+site+"')]"));
+        switchToNewTab();
+        acceptCookie();
     }
 
     @Step
