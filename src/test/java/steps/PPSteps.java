@@ -57,6 +57,7 @@ public class PPSteps extends BrowserSetup {
 
     @And("^I enter postcode (.+)$")
     public void enterPostCode(String postcode) throws Exception {
+        new PPCorporatePage(driver).acceptCookie();		
         Thread.sleep(2000);
         new PPCorporatePage(driver).findPostCode(postcode);
     }
