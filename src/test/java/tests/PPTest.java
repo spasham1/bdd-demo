@@ -36,7 +36,7 @@ public class PPTest extends PPBaseTest {
 		new PPCorporatePage(driver).findPostCode("AL7 1EL");
     }
 
-    //@Test(priority = 5)
+    @Test(priority = 5)
     public void consumer_page_tabs_should_fail() {
         new PPCorporatePage(driver).assertOtherTabs();
     }
