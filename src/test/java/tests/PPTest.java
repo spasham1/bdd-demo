@@ -29,7 +29,7 @@ public class PPTest extends PPBaseTest {
         new PPCorporatePage(driver).assertOtherTabs();
     }
 
-    @Test(priority = 4)
+    //@Test(priority = 4)
     public void consumer_page_tabs_should_fail() {
         new PPCorporatePage(driver).selectSite("Consumer");
         new PPCorporatePage(driver).pageShouldContainTitle("Find your local PayPoint store");
